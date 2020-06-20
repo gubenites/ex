@@ -30,7 +30,7 @@ int main(){
         }
       }
     }
-  } while (ret_eh_par != -1)
+  } while (ret_eh_par != -1);
 
   return 0;
 }
