@@ -20,7 +20,7 @@ int main() {
 
         if (filho == 0) {
             pai = getppid();
-            waitpid(filho = getpid());
+            waitpid(filho = getpid(), NULL, 0);
             nanosleep(&tim , &tim2);
 
             printf("Eu sou o processo filho %d, meu pai é %d\n", filho, pai);
