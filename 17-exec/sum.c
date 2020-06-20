@@ -5,15 +5,12 @@
 
 int main(int argc, char *argv[]){
   if(argc < 2){
-    printf("ERROR");
-  }else{
-    int counter = 0;
-
-    for(int i = 0; i < argc ; i++){
-      int foo = atoi(argv[i]);
-      counter += foo;
-      printf("Value: %d\n", counter);
-    }
-
+    return -1;
   }
+
+  int num = atoi(argv[1]);
+
+  if(num < 0) return -1;
+
+  return !(num % 2);
 }
