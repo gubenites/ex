@@ -11,7 +11,8 @@ int main(){
     filho = fork();
 
     if (filho == 0) {
-      pai = getpid();
+      pai = getppid();
+      filho = getpid();
 
       printf("Eu sou o processo filho %d, meu pai é %d \n", filho,pai);
       break;
