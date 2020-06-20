@@ -15,8 +15,6 @@ int main(){
 
       printf("Eu sou o processo filho %d, meu pai é %d \n", filho,pai);
       break;
-    }else{
-      wait(NULL);
     }
   }
   return 0;
