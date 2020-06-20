@@ -12,7 +12,7 @@ int main(int argc, char *argv[]){
     for(int i = 0; i < argc ; i++){
       int foo = atoi(argv[i]);
       counter += foo;
-      printf("Value: %d", counter);
+      printf("Value: %d\n", counter);
     }
 
   }
