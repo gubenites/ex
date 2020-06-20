@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 int main(){
-  pid_t pai, filho;
   int variavel = 5;
+  int x = 0;
+  printf("%d",variavel);
 }
