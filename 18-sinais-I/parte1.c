@@ -11,7 +11,18 @@ int main() {
     } else {
         int st;
         wait(&st);
-        if (WIFEXITED(st)) printf("return: %d\n", WEXITSTATUS(st));
-        if (WIFSIGNALED(st)) printf("signal: %s\n", strsignal(WTERMSIG(st)));
+        // if (WIFEXITED(st)) printf("return: %d\n", WEXITSTATUS(st));
+        // if (WIFSIGNALED(st)) printf("signal: %s\n", strsignal(WTERMSIG(st)));
+        // printf(strsignal(WIFEXITED(st)));
+
+        printf("\n");
+
+        printf(strsignal(WIFSIGNALED(st)));
+
+        printf("\n");
+
+        printf(strsignal(WTERMSIG(st)));
+
+        printf("\n");
     }
 }
