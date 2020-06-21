@@ -19,10 +19,8 @@ int main() {
     pid_t filho_acabou = waitpid(filho,&st,WNOHANG);
     if (filho_acabou == 0) {
       kill(filho, SIGINT);
-    }else{
-      wait(&st);
-      if (WIFEXITED(st)) printf("return: %d\n", WEXITSTATUS(st));
-      if (WIFSIGNALED(st)) printf("signal: %s\n", strsignal(WTERMSIG(st)));
-
     }
+    wait(&st);
+    if (WIFEXITED(st)) printf("return: %d\n", WEXITSTATUS(st));
+    if (WIFSIGNALED(st)) printf("signal: %s\n", strsignal(WTERMSIG(st)));
 }
