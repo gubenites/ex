@@ -17,7 +17,7 @@ int main() {
     }
     sleep(10);
     int st;
-    pid_t filho_acabou = waitpid(filho,&st,WHONANG);
+    pid_t filho_acabou = waitpid(filho,&st,WNOHANG);
     if (filho_acabou == 0) {
       kill(filho, SIGKILL);
       wait(&st);
