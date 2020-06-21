@@ -19,12 +19,11 @@ int main() {
     if (filho == 0) {
       pai = getppid();
       kill(getpid(), SIGINT);
-    }else{
+    }
       wait(&st);
       if (WIFEXITED(st)) printf("return: %d\n", WEXITSTATUS(st));
       if (WIFSIGNALED(st)) printf("signal: %s\n", strsignal(WTERMSIG(st)));
 
       nanosleep(&tim, &tim2);
       kill(pai, SIGKILL);
-    }
 }
