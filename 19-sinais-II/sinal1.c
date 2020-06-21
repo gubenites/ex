@@ -2,6 +2,8 @@
 #include <unistd.h>
 #include <signal.h>
 
+int counter = 0;
+
 void sig_handler(int num) {
     printf("Chamou Ctrl+C\n");
 
@@ -16,7 +18,6 @@ int main() {
      * como handler do sinal SIGINT
      */
     printf("Meu pid: %d\n", getpid());
-    int counter = 0;
     signal(SIGINT, sig_handler);
 
     while(1) {
