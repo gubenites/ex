@@ -7,22 +7,14 @@
 
 int main() {
     if (fork() == 0) {
-        int i = 1/0;
+        printf("%d\n", getpid());
+        while(1){
+
+        }
     } else {
         int st;
         wait(&st);
-        // if (WIFEXITED(st)) printf("return: %d\n", WEXITSTATUS(st));
-        // if (WIFSIGNALED(st)) printf("signal: %s\n", strsignal(WTERMSIG(st)));
-        // printf(strsignal(WIFEXITED(st)));
-
-        printf("\n");
-
-        printf(strsignal(WIFSIGNALED(st)));
-
-        printf("\n");
-
-        printf(strsignal(WTERMSIG(st)));
-
-        printf("\n");
+        if (WIFEXITED(st)) printf("return: %d\n", WEXITSTATUS(st));
+        if (WIFSIGNALED(st)) printf("signal: %s\n", strsignal(WTERMSIG(st)));
     }
 }
