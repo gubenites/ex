@@ -7,6 +7,7 @@
 
 int main() {
     pid_t filho, pai;
+    int st;
     struct timespec tim, tim2;
     tim.tv_nsec = 0;
     tim.tv_sec = 10;
