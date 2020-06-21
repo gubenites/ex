@@ -18,7 +18,7 @@ int main() {
     filho = fork();
     if (filho == 0) {
       pai = getppid();
-      kill(getpid(), SIGINT);
+      kill(getpid(), SIGKILL);
     }
       wait(&st);
       if (WIFEXITED(st)) printf("return: %d\n", WEXITSTATUS(st));
