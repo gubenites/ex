@@ -6,21 +6,21 @@
 #include <signal.h>
 
 int main() {
-    pid_t filho;
+    pid_t filho, pai;
+    struct timespec tim, tim2;
+    tim.tv_nsec = 0;
+    tim.tv_sec = 10;
+
     filho = fork();
     if (filho == 0) {
-        printf("%d\n", getpid());
-        while(1){
-          printf("ENTREI\n");
-        }
+      pai = getppid();
+      kill(getpid(), SIGINT);
+    }else{
+      wait(&st);
+      if (WIFEXITED(st)) printf("return: %d\n", WEXITSTATUS(st));
+      if (WIFSIGNALED(st)) printf("signal: %s\n", strsignal(WTERMSIG(st)));
+
+      nanosleep(&tim, &tim2);
+      kill(pai, SIGKILL);
     }
-    sleep(10);
-    int st;
-    pid_t filho_acabou = waitpid(filho,&st,WNOHANG);
-    if (filho_acabou == 0) {
-      kill(filho, SIGINT);
-    }
-    wait(&st);
-    if (WIFEXITED(st)) printf("return: %d\n", WEXITSTATUS(st));
-    if (WIFSIGNALED(st)) printf("signal: %s\n", strsignal(WTERMSIG(st)));
 }
