@@ -3,6 +3,11 @@
 
 void sig_handler(int num) {
     printf("Chamou Ctrl+C\n");
+
+    counter += 1;
+    if (counter == 3) {
+      exit(-1);
+    }
 }
 
 int main() {
@@ -10,9 +15,11 @@ int main() {
      * como handler do sinal SIGINT
      */
     printf("Meu pid: %d\n", getpid());
+    int counter = 0;
+    signal(SIGINT, sig_handler);
 
     while(1) {
-        sleep(1);
+
     }
     return 0;
 }
