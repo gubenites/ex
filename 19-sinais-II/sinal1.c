@@ -19,7 +19,7 @@ void sigterm_handler(int num){
   status += 1;
   printf("Chamou SIGTERM; status=%d\n", status);
   operacao_lenta();
-  printf("SIGTERM: Vou usar status agora! status=%d\n", status)
+  printf("SIGTERM: Vou usar status agora! status=%d\n", status);
 }
 
 int main() {
