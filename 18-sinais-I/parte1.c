@@ -1,9 +1,12 @@
+#include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <sys/resource.h>
 #include <string.h>
-#include <stdio.h>
 #include <signal.h>
+#include <stdio.h>
+#include <time.h>
 
 int main() {
     pid_t filho, pai;
