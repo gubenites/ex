@@ -12,7 +12,7 @@ int main() {
         printf("%d\n", getpid());
         return 5;
         while(1){
-
+          printf("ENTREI\n");
         }
     }
     sleep(10);
