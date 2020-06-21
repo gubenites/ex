@@ -9,7 +9,7 @@ void sig_handler(int num) {
 
     counter += 1;
     if (counter == 3) {
-      exit(-1);
+      exit(0);
     }
 }
 
@@ -18,10 +18,15 @@ int main() {
      * como handler do sinal SIGINT
      */
     printf("Meu pid: %d\n", getpid());
-    signal(SIGINT, sig_handler);
+    struct sigaction s;
+    s.sa_handler = sig_handler;
+    sigemptyset(&s.sa_mask);
+    s.sa_flags = 0;
+
+    sigaction(SIGINT, &s, NULL);
 
     while(1) {
-
+      sleep(1);
     }
     return 0;
 }
