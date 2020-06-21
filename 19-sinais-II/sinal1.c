@@ -12,7 +12,7 @@ void sigint_handler(int num) {
   status += 1;
   printf("Chamou Ctrl+C; status=%d\n", status);
   operacao_lenta();
-  printf("SIGINT: Vou usar status agora! status=%d\n", status)
+  printf("SIGINT: Vou usar status agora! status=%d\n", status);
 }
 
 void sigterm_handler(int num){
