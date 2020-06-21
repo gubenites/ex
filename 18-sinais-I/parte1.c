@@ -10,7 +10,6 @@ int main() {
     filho = fork();
     if (filho == 0) {
         printf("%d\n", getpid());
-        return 5;
         while(1){
           printf("ENTREI\n");
         }
